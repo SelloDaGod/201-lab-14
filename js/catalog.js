@@ -12,6 +12,11 @@ function populateForm() {
   //TODO: Add an <option> tag inside the form's select for each product
   const selectElement = document.getElementById('items');
   for (let i in state.allProducts) {
+    console.log(i.name);
+    optiontag.innerHTML = state.allProducts[i].name
+    let optiontag = document.createElement('option');
+
+    selectElement.append(optionTag)
 
   }
 
@@ -37,6 +42,7 @@ function addSelectedItemToCart() {
   // TODO: suss out the item picked from the select list
   // TODO: get the quantity
   // TODO: using those, add one item to the Cart
+  state.cart.items.push(new CartItem)
 }
 
 // TODO: As you add items into the cart, show them (item & quantity) in the cart preview div

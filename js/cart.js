@@ -7,7 +7,15 @@ table.addEventListener('click', removeItemFromCart);
 
 function loadCart() {
   const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+  let cartString = localStorage.getItem("cart")
+  let cartobject = JSON.parse(cartString)
+  if(cartObject == undifined){
+    cartItems = []
+  }else{
+    cartItems = cartObject.cartItems
+  }
   state.cart = new Cart(cartItems);
+  console.log("state.cart")
 }
 
 // Make magic happen --- re-pull the Cart, clear out the screen and re-draw it
